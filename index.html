@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/css/base.css" />
+    <link rel="stylesheet" href="./libs/css/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./libs/css/style.css" />
+    <script src="./libs/js/jquery-1.12.4.js"></script>
+    <script src="./libs/js/template-web.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <h1>爱情日记</h1>
+      <div id="rj">
+        <h3 id="time"></h3>
+        <p></p>
+        <div class="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+      </div>
+    </div>
+    <div class="btns-bg">
+      <div class="PlayEy"></div>
+      <div class="Btn"></div>
+      <div class="Play">
+        <audio id="audios" src="./说谎.mp3"></audio>
+      </div>
+    </div>
+    <script src="./libs/js/script.js"></script>
+    <script src="./libs/live2d-widget/autoload.js"></script>
+    <script>
+      // 获得当前日期函数
+      function getTime() {
+        var time = new Date();
+        var nian = time.getFullYear();
+        var yue = time.getMonth() + 1;
+        var ri = time.getDate();
+        var timeArr = [nian, yue, ri];
+        return timeArr;
+      }
+      var arr = getTime();
+      var n = arr[0];
+      var y = arr[1];
+      var r = arr[2];
+      $('#time').html(arr[0] + '年 ' + arr[1] + '月 ' + arr[2] + '日 ');
+      getTxt();
+      $('#left').click(function () {
+        console.log(1);
+        if (r == 1) {
+          r = 30;
+          y--;
+          if (y == 1) {
+            y = 12;
+            n--;
+          }
+        } else {
+          r--;
+        }
+        $('#time').html(n + '年 ' + y + '月 ' + r + '日 ');
+        getTxt();
+      });
+      $('#right').click(function () {
+        if (n == arr[0] && y == arr[1] && r == arr[2]) {
+          alert('明天的还没写哦,看看以前的');
+          return;
+        }
+        if (r == 30) {
+          r = 1;
+          y++;
+          if (y == 12) {
+            y = 1;
+            n++;
+          }
+        } else {
+          r++;
+        }
+        $('#time').html(n + '年 ' + y + '月 ' + r + '日 ');
+        getTxt();
+      });
+      function getTxt() {
+        $.ajax({
+          type: 'get',
+          url: 'https://v1.alapi.cn/api/dog',
+          dataType: 'json',
+          success: function (backData) {
+            $('p').text(backData.data.content);
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

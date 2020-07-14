@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* body {
+  margin: 0px;
+  background: url(../img/page-bg.png) no-repeat 50%/100% 100%;
+  background-size: 100% auto;
+} */
+
+.PlayEy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: url(../img/bg_circle.png), url(../img/bg_center.png) no-repeat center;
+  background-size: 100% auto;
+}
+
+/* .Btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 95px;
+  background-color: yellow;
+  background: url(../img/btn-bg.png) no-repeat;
+  animation: Btn-bg 3s linear infinite;
+} */
+
+.Play {
+  position: absolute;
+  width: 29px;
+  height: 36px;
+  background: red;
+  background: url(../img/pause.png) no-repeat;
+  transition: 0.5s;
+}
+
+.btns-bg {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+/* @keyframes Btn-bg {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

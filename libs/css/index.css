@@ -1,0 +1,59 @@
+body {
+  background-color: #21a675;
+  background-repeat: repeat, repeat-x;
+  background-image: url(../img/bj.png), url(../img/top.png);
+}
+.main {
+  width: 1200px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: #fff;
+}
+#rj {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+#time {
+  font-size: 24px;
+  font-style: italic;
+  margin: 30px 0 0 30px;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+p {
+  margin: 30px auto;
+  width: 600px;
+  height: 500px;
+  font-size: 24px;
+  line-height: 48px;
+  text-indent: 2em;
+  overflow: auto;
+}
+.arr span {
+  position: absolute;
+  top: 45%;
+  left: 10px;
+  font-size: 24px;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.arr span:nth-child(2) {
+  right: 10px;
+  left: auto;
+}
+.arr {
+  display: none;
+}
+#rj:hover .arr {
+  display: block;
+}
