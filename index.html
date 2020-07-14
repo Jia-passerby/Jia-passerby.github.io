@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>爱情日记</title>
     <link rel="stylesheet" href="./libs/css/base.css" />
     <link rel="stylesheet" href="./libs/css/index.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
@@ -79,12 +79,15 @@
         getTxt();
       });
       function getTxt() {
+        $('p').css('background', 'url(./img/loading01.gif)');
         $.ajax({
           type: 'get',
           url: 'https://v1.alapi.cn/api/dog',
           dataType: 'json',
           success: function (backData) {
-            $('p').text(backData.data.content);
+            if (backData.code == 200) {
+              $('p').text(backData.data.content);
+            }
           },
         });
       }
