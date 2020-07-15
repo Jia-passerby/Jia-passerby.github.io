@@ -57,3 +57,13 @@ p {
 #rj:hover .arr {
   display: block;
 }
+.btns-bg .play {
+  background: url(../img/play.png) no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.btns-bg .pause {
+  background: url(../img/pause.png) no-repeat;
+  width: 29px;
+  height: 36px;
+}

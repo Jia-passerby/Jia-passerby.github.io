@@ -12,13 +12,11 @@ oPlay.onclick = function () {
   }, 30);
   if (audios.paused) {
     audios.play();
-    oPlay.style.background = 'url(../img/play.png) no-repeat';
-    oPlay.style.width = 32 + 'px';
-    oPlay.style.height = 32 + 'px';
+    oPlay.classList.remove('pause');
+    oPlay.classList.add('play');
   } else {
     audios.pause();
-    oPlay.style.background = 'url(../img/pause.png) no-repeat';
-    oPlay.style.width = 29 + 'px';
-    oPlay.style.height = 36 + 'px';
+    oPlay.classList.remove('play');
+    oPlay.classList.add('pause');
   }
 };

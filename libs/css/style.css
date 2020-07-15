@@ -1,10 +1,4 @@
 @charset "utf-8";
-/* body {
-  margin: 0px;
-  background: url(../img/page-bg.png) no-repeat 50%/100% 100%;
-  background-size: 100% auto;
-} */
-
 .PlayEy {
   display: flex;
   justify-content: center;
@@ -14,18 +8,6 @@
   background: url(../img/bg_circle.png), url(../img/bg_center.png) no-repeat center;
   background-size: 100% auto;
 }
-
-/* .Btn {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 95px;
-  height: 95px;
-  background-color: yellow;
-  background: url(../img/btn-bg.png) no-repeat;
-  animation: Btn-bg 3s linear infinite;
-} */
 
 .Play {
   position: absolute;
@@ -48,11 +30,3 @@
   height: 100px;
   cursor: pointer;
 }
-
-/* @keyframes Btn-bg {
-  from {
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
